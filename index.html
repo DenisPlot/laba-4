@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Классификация Ирисов</title>
+</head>
+<body>
+    <h1>Введите параметры цветка</h1>
+    <form action="/predict" method="post">
+        <p>
+            <label>Длина чашелистика:</label>
+            <input type="number" step="0.1" name="sepal_length" required>
+        </p>
+        <p>
+            <label>Ширина чашелистика:</label>
+            <input type="number" step="0.1" name="sepal_width" required>
+        </p>
+        <p>
+            <label>Длина лепестка:</label>
+            <input type="number" step="0.1" name="petal_length" required>
+        </p>
+        <p>
+            <label>Ширина лепестка:</label>
+            <input type="number" step="0.1" name="petal_width" required>
+        </p>
+        <button type="submit">Отправить</button>
+    </form>
+
+    {% if result %}
+        <h2>Результат: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
